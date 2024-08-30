@@ -44,7 +44,12 @@ const AppNavigator = () => (
         options={{ title: 'Signup' }} 
       />
       <Stack.Screen 
-        name="Home" 
+        name="Role" 
+        component={Role} 
+        options={{ title: 'Role' }} 
+      />
+      <Stack.Screen 
+        name="Tabs" 
         component={TabNavigator} 
         options={{ headerShown: false }} 
       />
@@ -63,11 +68,7 @@ const AppNavigator = () => (
         component={AllSubjects} 
         options={{ title: 'All Subjects' }} 
       />
-      <Stack.Screen 
-        name="Role" 
-        component={Role} 
-        options={{ title: 'Role' }} 
-      />
+      
     </Stack.Navigator>
   </NavigationContainer>
 );

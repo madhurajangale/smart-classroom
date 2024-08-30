@@ -8,7 +8,7 @@ const LoginScreen = () => {
 
   // Function to handle button press
   const handleLogin = () => {
-    navigation.navigate('Home');
+    navigation.navigate('Tabs');
   };
 
   return (

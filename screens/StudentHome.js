@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons'; // Ensure the icon library is installed
+import Icon from 'react-native-vector-icons/MaterialIcons'; 
 import moment from 'moment'; // For date manipulation
 import { useNavigation } from '@react-navigation/native';
 
@@ -15,8 +15,8 @@ const HomeScreen = () => {
     }, []);
 
     const generateDates = () => {
-        const startDate = moment().subtract(3, 'days'); // Start 3 days ago for demonstration
-        const endDate = moment().add(3, 'days'); // End 3 days into the future
+        const startDate = moment().subtract(2, 'days'); // Start 3 days ago for demonstration
+        const endDate = moment().add(2, 'days'); // End 3 days into the future
         const dateArray = [];
 
         let date = startDate;
@@ -86,39 +86,39 @@ const HomeScreen = () => {
                 <View style={styles.classesContainer}>
                     <TouchableOpacity
                         style={styles.classCard}
-                        onPress={() => handleCardClick('Math 101')} // Pass the subject name or data
+                        onPress={() => handleCardClick('Math')} 
                     >
                         <View style={styles.classInfo}>
-                            <Text style={styles.subjectName}>Math 101</Text>
+                            <Text style={styles.subjectName}>Math </Text>
                             <Text>Teacher Name</Text>
                         </View>
-                        <TouchableOpacity onPress={() => handleAttendance('Math 101')} style={styles.attendanceButton}>
+                        <TouchableOpacity onPress={() => handleAttendance('Math')} style={styles.attendanceButton}>
                             <Icon name="face" size={24} color="#3a477a" />
                         </TouchableOpacity>
                     </TouchableOpacity>
 
                     <TouchableOpacity
                         style={styles.classCard}
-                        onPress={() => handleCardClick('Science 101')} // Pass the subject name or data
+                        onPress={() => handleCardClick('Science')} // Pass the subject name or data
                     >
                         <View style={styles.classInfo}>
-                            <Text style={styles.subjectName}>Science 101</Text>
+                            <Text style={styles.subjectName}>Science </Text>
                             <Text>Teacher Name</Text>
                         </View>
-                        <TouchableOpacity onPress={() => handleAttendance('Science 101')} style={styles.attendanceButton}>
+                        <TouchableOpacity onPress={() => handleAttendance('Science ')} style={styles.attendanceButton}>
                             <Icon name="face" size={24} color="#3a477a" />
                         </TouchableOpacity>
                     </TouchableOpacity>
 
                     <TouchableOpacity
                         style={styles.classCard}
-                        onPress={() => handleCardClick('History 101')} // Pass the subject name or data
+                        onPress={() => handleCardClick('History ')} // Pass the subject name or data
                     >
                         <View style={styles.classInfo}>
-                            <Text style={styles.subjectName}>History 101</Text>
+                            <Text style={styles.subjectName}>History </Text>
                             <Text>Teacher Name</Text>
                         </View>
-                        <TouchableOpacity onPress={() => handleAttendance('History 101')} style={styles.attendanceButton}>
+                        <TouchableOpacity onPress={() => handleAttendance('History ')} style={styles.attendanceButton}>
                             <Icon name="face" size={24} color="#3a477a" />
                         </TouchableOpacity>
                     </TouchableOpacity>

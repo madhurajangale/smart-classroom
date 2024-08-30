@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TextInput, Button, ScrollView, Picker } from 'react-native';
+import { View, Text, StyleSheet, TextInput, Button, ScrollView } from 'react-native';
+import { Picker } from '@react-native-picker/picker';
+
 
 const ComplaintsScreen = () => {
   const [complaintType, setComplaintType] = useState('');
