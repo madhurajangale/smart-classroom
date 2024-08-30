@@ -1,11 +1,11 @@
 // DashboardScreen.js
 import React from 'react';
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
-import { LineChart } from 'react-native-chart-kit';
+import { LineChart, BarChart, PieChart } from 'react-native-chart-kit';
 
 const DashboardScreen = () => {
-  // Dummy data for the chart
-  const data = {
+  // Dummy data for the line chart
+  const performanceData = {
     labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
     datasets: [
       {
@@ -14,18 +14,118 @@ const DashboardScreen = () => {
     ],
   };
 
+  // Dummy data for bar charts
+  const chartData = {
+    labels: ['Your Marks', 'Median Marks', 'Highest Marks'],
+    datasets: [
+      {
+        data: [60, 65, 77], // Example data for Physics
+      },
+    ],
+  };
+
+  const chartDataChemistry = {
+    labels: ['Your Marks', 'Median Marks', 'Highest Marks'],
+    datasets: [
+      {
+        data: [78, 75, 85], // Example data for Chemistry
+      },
+    ],
+  };
+
+  const chartDataMath = {
+    labels: ['Your Marks', 'Median Marks', 'Highest Marks'],
+    datasets: [
+      {
+        data: [90, 85, 100], // Example data for Math
+      },
+    ],
+  };
+
+  // Dummy data for the pie chart
+  const pieChartData = [
+    {
+      name: 'Physics',
+      population: 30,
+      color: '#FF6384',
+      legendFontColor: '#7F7F7F',
+      legendFontSize: 15,
+    },
+    {
+      name: 'Chemistry',
+      population: 40,
+      color: '#36A2EB',
+      legendFontColor: '#7F7F7F',
+      legendFontSize: 15,
+    },
+    {
+      name: 'Math',
+      population: 30,
+      color: '#FFCE56',
+      legendFontColor: '#7F7F7F',
+      legendFontSize: 15,
+    },
+  ];
+
   return (
     <ScrollView style={styles.container}>
       <Text style={styles.header}>Dashboard</Text>
 
       <View style={styles.card}>
-        <Text style={styles.cardTitle}>Weekly Performance</Text>
+        <Text style={styles.cardTitle}>Daily Class Participation Points</Text>
         <LineChart
-          data={data}
-          width={340} 
+          data={performanceData}
+          width={320}
           height={220}
           chartConfig={chartConfig}
           bezier
+          style={styles.chart}
+        />
+      </View>
+
+      <View style={styles.card}>
+        <Text style={styles.cardTitle}>Physics</Text>
+        <BarChart
+          data={chartData}
+          width={320}
+          height={170}
+          chartConfig={barChartConfig}
+          style={styles.chart}
+        />
+      </View>
+
+      <View style={styles.card}>
+        <Text style={styles.cardTitle}>Chemistry</Text>
+        <BarChart
+          data={chartDataChemistry}
+          width={320}
+          height={170}
+          chartConfig={barChartConfig}
+          style={styles.chart}
+        />
+      </View>
+
+      <View style={styles.card}>
+        <Text style={styles.cardTitle}>Math</Text>
+        <BarChart
+          data={chartDataMath}
+          width={320}
+          height={170}
+          chartConfig={barChartConfig}
+          style={styles.chart}
+        />
+      </View>
+
+      <View style={styles.card}>
+        <Text style={styles.cardTitle}>Subject Contribution in Midterm Exam</Text>
+        <PieChart
+          data={pieChartData}
+          width={320}
+          height={220}
+          chartConfig={pieChartConfig}
+          accessor="population"
+          backgroundColor="transparent"
+          paddingLeft="15"
           style={styles.chart}
         />
       </View>
@@ -47,7 +147,7 @@ const DashboardScreen = () => {
   );
 };
 
-// Chart configuration
+// Line chart configuration
 const chartConfig = {
   backgroundGradientFrom: '#3a477a',
   backgroundGradientTo: '#3a477a',
@@ -56,6 +156,24 @@ const chartConfig = {
   style: {
     borderRadius: 16,
   },
+};
+
+// Bar chart configuration
+const barChartConfig = {
+  backgroundGradientFrom: '#3a477a',
+  backgroundGradientTo: '#3a477a',
+  decimalPlaces: 0,
+  color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+  style: {
+    borderRadius: 16,
+  },
+  barPercentage: 0.5,
+  useShadowColorFromDataset: false,
+};
+
+// Pie chart configuration
+const pieChartConfig = {
+  color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
 };
 
 const styles = StyleSheet.create({
