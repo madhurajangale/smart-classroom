@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, ScrollView } from 'react-native';
+import GeminiChat from '../components/GeminiChat';
+import FlashMessage from "react-native-flash-message";
 
 const SubjectClick = () => {
   // State to manage the active tab
@@ -39,11 +41,11 @@ const SubjectClick = () => {
               );
        
       case 'CHATS':
-        return (
-          <View style={styles.content}>
-            <Text style={styles.tabContentText}>This is the Chats tab content.</Text>
-            {/* You can replace this with the actual content for the Chats tab */}
-          </View>
+        return (     
+      <View style={styles.container}>
+        <GeminiChat />
+      <FlashMessage position={"top"} />
+    </View>   
         );
       default:
         return null;
@@ -159,6 +161,9 @@ const styles = StyleSheet.create({
     color: '#333',
     textAlign: 'center',
     marginVertical: 20,
+  },
+  container: {
+    flex: 1,
   },
 });
 
