@@ -10,6 +10,8 @@ import ProfileScreen from '../screens/ProfileScreen';
 import SubjectClick from '../screens/Subject'; 
 import AllSubjects from "../screens/AllSubjects";
 import Role from '../screens/role';
+import AdminHome from '../screens/admin/AdminHome';
+import DepartmentHome from '../screens/admin/DepartmentHome';
 
 
 const Stack = createStackNavigator();
@@ -21,10 +23,12 @@ const linking = {
       Login: 'login',
       CheckTimetable: 'checktimetable',
       DashboardScreen: 'dashboardScreen',
+      AdminHome: 'adminhome',
       ComplaintsScreen: 'complaintsScreen',
-      Profile: 'profile', // Add the Profile screen route
-      SubjectClick: 'subjectClick', // Add the SubjectClick route
+      Profile: 'profile', 
+      SubjectClick: 'subjectClick', 
       AllSubjects: 'allSubjects', 
+      DepartmentHome: 'departmentHome',
     },
   },
 };
@@ -49,6 +53,11 @@ const AppNavigator = () => (
         options={{ title: 'Role' }} 
       />
       <Stack.Screen 
+        name="AdminHome" 
+        component={AdminHome} 
+        options={{ title: 'AdminHome' }} 
+      />
+      <Stack.Screen 
         name="Tabs" 
         component={TabNavigator} 
         options={{ headerShown: false }} 
@@ -67,6 +76,11 @@ const AppNavigator = () => (
         name="AllSubjects" 
         component={AllSubjects} 
         options={{ title: 'All Subjects' }} 
+      />
+      <Stack.Screen 
+        name="DepartmentHome" 
+        component={DepartmentHome} 
+        options={{ title: 'Department Home' }} 
       />
       
     </Stack.Navigator>

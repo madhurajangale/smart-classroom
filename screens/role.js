@@ -1,42 +1,43 @@
 import React from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet,} from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, } from 'react-native';
 
-const Role = ({navigation}) => {
-    return (
-        <View style={styles.contain}>
-            <TouchableOpacity style={styles.role} onPress={() => navigation.navigate('Signup')}>
+const Role = ({ navigation }) => {
+  return (
+    <View style={styles.contain}>
+      <TouchableOpacity style={styles.role} onPress={() => navigation.navigate('AdminHome')}>
         <Text style={styles.roleText}>Admin</Text>
       </TouchableOpacity>
 
-<TouchableOpacity style={styles.role} onPress={() => navigation.navigate('Signup')}>
+      <TouchableOpacity style={styles.role} onPress={() => navigation.navigate('Signup')}>
         <Text style={styles.roleText}>Student</Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.role} onPress={() => navigation.navigate('Signup')}>
         <Text style={styles.roleText}>Teacher</Text>
       </TouchableOpacity>
-        </View>
-    )}
+    </View>
+  )
+}
 
 
 const styles = StyleSheet.create({
 
-    contain: {
+  contain: {
     marginTop: 170,
-    marginLeft:20,
-    marginRight:20
-    },
+    marginLeft: 20,
+    marginRight: 20
+  },
 
-    role: {
+  role: {
     backgroundColor: '#3a477a',
     padding: 16,
     borderRadius: 8,
     marginBottom: 16,
-    },
+  },
 
-    roleText: {
+  roleText: {
     backgroundColor: '#3A477A',
-    color: '#fff' ,
+    color: '#fff',
     fontWeight: 'bold',
     fontSize: 18,
     textAlign: 'center',
@@ -44,8 +45,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 40,
     borderRadius: 20,
     marginBottom: 20,
-    
-    }
+
+  }
 })
 
 export default Role;
