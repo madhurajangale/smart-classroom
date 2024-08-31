@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 const AdminHome = ({ navigation }) => {
     return (
         <View style={styles.container}>
-            <View style={styles.topBar}>
+            <View style={styles.topBar}> 
                 <Text style={styles.logo}>E</Text>
                 <View style={styles.profileContainer}>
                     <TouchableOpacity onPress={() => navigation.navigate('Profile')}>

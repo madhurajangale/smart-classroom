@@ -56,8 +56,9 @@ const AppNavigator = () => (
 
       <Stack.Screen 
         name="AdminTabs" 
-        component={AdminTabs} 
-        options={{ title: 'AdminTabs' }} 
+        component={AdminTabs}
+        options={{ headerShown: false }}  
+       
       />
       <Stack.Screen 
         name="Tabs" 
@@ -82,7 +83,6 @@ const AppNavigator = () => (
       <Stack.Screen 
         name="DepartmentHome" 
         component={DepartmentHome} 
-        options={{ title: 'Department Home' }} 
       />
       
     </Stack.Navigator>

@@ -149,7 +149,7 @@ const styles = StyleSheet.create({
     height:80,
     marginBottom: 1,
     marginTop: 1,
-    color: '#3A477A', // Dark purple color
+    color: '#3A477A', 
   },
   TextInput: {
     color: '#3A477A',

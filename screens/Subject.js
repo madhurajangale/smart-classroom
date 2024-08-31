@@ -4,10 +4,9 @@ import GeminiChat from '../components/GeminiChat';
 import FlashMessage from "react-native-flash-message";
 
 const SubjectClick = () => {
-  // State to manage the active tab
+
   const [activeTab, setActiveTab] = useState('NOTES');
 
-  // Function to render the content based on the active tab
   const renderContent = () => {
     switch (activeTab) {
       case 'NOTES':
@@ -54,12 +53,10 @@ const SubjectClick = () => {
 
   return (
     <View style={styles.container}>
-      {/* Header */}
       <View style={styles.header}>
         <Text style={styles.headerText}>MATHS</Text>
       </View>
 
-      {/* Navigation Tabs */}
       <View style={styles.tabsContainer}>
         <TouchableOpacity onPress={() => setActiveTab('NOTES')}>
           <Text style={[styles.tab, activeTab === 'NOTES' && styles.activeTab]}>NOTES</Text>
