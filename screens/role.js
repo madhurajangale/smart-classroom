@@ -4,7 +4,7 @@ import { View, Text, TextInput, TouchableOpacity, StyleSheet, } from 'react-nati
 const Role = ({ navigation }) => {
   return (
     <View style={styles.contain}>
-      <TouchableOpacity style={styles.role} onPress={() => navigation.navigate('AdminHome')}>
+      <TouchableOpacity style={styles.role} onPress={() => navigation.navigate('AdminTabs')}>
         <Text style={styles.roleText}>Admin</Text>
       </TouchableOpacity>
 

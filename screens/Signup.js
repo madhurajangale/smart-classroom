@@ -8,7 +8,7 @@ const SignupScreen = () => {
 
   // Function to handle button press
   const handleLogin = () => {
-    navigation.navigate('Home');
+    navigation.navigate('Tabs');
   };
   return (
     <View style={styles.container}>

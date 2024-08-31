@@ -2,16 +2,17 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import IndexScreen from '../screens'; // Ensure correct path
+import IndexScreen from '../screens';
 import LoginScreen from '../screens/LoginScreen';
 import SignupScreen from '../screens/Signup';
-import TabNavigator from './TabNavigator'; // Import the Tab Navigator
+import TabNavigator from './TabNavigator'; 
 import ProfileScreen from '../screens/ProfileScreen'; 
 import SubjectClick from '../screens/Subject'; 
 import AllSubjects from "../screens/AllSubjects";
 import Role from '../screens/role';
 import AdminHome from '../screens/admin/AdminHome';
 import DepartmentHome from '../screens/admin/DepartmentHome';
+import AdminTabs from './AdminTabs.js'
 
 
 const Stack = createStackNavigator();
@@ -52,10 +53,11 @@ const AppNavigator = () => (
         component={Role} 
         options={{ title: 'Role' }} 
       />
+
       <Stack.Screen 
-        name="AdminHome" 
-        component={AdminHome} 
-        options={{ title: 'AdminHome' }} 
+        name="AdminTabs" 
+        component={AdminTabs} 
+        options={{ title: 'AdminTabs' }} 
       />
       <Stack.Screen 
         name="Tabs" 

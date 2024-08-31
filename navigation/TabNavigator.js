@@ -21,7 +21,7 @@ const TabNavigator = () => (
         } else if (route.name === 'Progress') {
           iconName = 'trending-up';
         } else if (route.name === 'Complaints') {
-          iconName = 'report-problem';
+          iconName = 'report';
         }
 
         return <Icon name={iconName} size={size} color={color} />;
