@@ -4,22 +4,22 @@ import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import { LineChart, BarChart, PieChart } from 'react-native-chart-kit';
 
 const DashboardScreen = () => {
-  // Dummy data for the line chart
+  
   const performanceData = {
     labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
     datasets: [
       {
-        data: [50, 60, 70, 80, 90, 85, 75], // Example performance data
+        data: [50, 60, 70, 80, 90, 85, 75], 
       },
     ],
   };
 
-  // Dummy data for bar charts
+  
   const chartData = {
     labels: ['Your Marks', 'Median Marks', 'Highest Marks'],
     datasets: [
       {
-        data: [60, 65, 77], // Example data for Physics
+        data: [60, 65, 77], 
       },
     ],
   };
@@ -28,7 +28,7 @@ const DashboardScreen = () => {
     labels: ['Your Marks', 'Median Marks', 'Highest Marks'],
     datasets: [
       {
-        data: [78, 75, 85], // Example data for Chemistry
+        data: [78, 75, 85],
       },
     ],
   };
@@ -37,12 +37,12 @@ const DashboardScreen = () => {
     labels: ['Your Marks', 'Median Marks', 'Highest Marks'],
     datasets: [
       {
-        data: [90, 85, 100], // Example data for Math
+        data: [90, 85, 100], 
       },
     ],
   };
 
-  // Dummy data for the pie chart
+
   const pieChartData = [
     {
       name: 'Physics',
@@ -147,7 +147,6 @@ const DashboardScreen = () => {
   );
 };
 
-// Line chart configuration
 const chartConfig = {
   backgroundGradientFrom: '#3a477a',
   backgroundGradientTo: '#3a477a',
@@ -158,7 +157,6 @@ const chartConfig = {
   },
 };
 
-// Bar chart configuration
 const barChartConfig = {
   backgroundGradientFrom: '#3a477a',
   backgroundGradientTo: '#3a477a',
@@ -171,7 +169,7 @@ const barChartConfig = {
   useShadowColorFromDataset: false,
 };
 
-// Pie chart configuration
+
 const pieChartConfig = {
   color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
 };

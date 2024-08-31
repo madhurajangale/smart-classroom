@@ -5,7 +5,6 @@ import Icon from 'react-native-vector-icons/MaterialIcons'; // Ensure this packa
 const AdminHome = ({ navigation }) => {
     return (
         <View style={styles.container}>
-            {/* Top Bar */}
             <View style={styles.topBar}>
                 <Text style={styles.logo}>E</Text>
                 <View style={styles.profileContainer}>
@@ -15,9 +14,7 @@ const AdminHome = ({ navigation }) => {
                 </View>
             </View>
 
-            {/* Main Content */}
             <View style={styles.mainContent}>
-                {/* Overview Cards */}
                 <View style={styles.overviewContainer}>
                     <View style={styles.rowContainer}>
                         <View style={styles.card}>
@@ -55,12 +52,10 @@ const AdminHome = ({ navigation }) => {
                     </View>
                 </View>
 
-                {/* Departments Heading */}
                 <View style={styles.departmentsSection}>
                     <Text style={styles.departmentsTitle}>Departments</Text>
                 </View>
 
-                {/* Department Cards */}
                 <View style={styles.departmentContainer}>
                     {['IT', 'CS', 'EXTC', 'AIDS'].map(department => (
                         <TouchableOpacity 
@@ -122,7 +117,7 @@ const styles = StyleSheet.create({
         marginBottom: 20,
     },
     card: {
-        backgroundColor: '#ffffff', // White background for cards
+        backgroundColor: '#ffffff', 
         padding: 15,
         borderRadius: 8,
         shadowColor: '#000000',
@@ -130,18 +125,18 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.1,
         shadowRadius: 4,
         elevation: 2,
-        flexBasis: '48%', // Make cards take up 48% of the container width
+        flexBasis: '48%', 
         marginBottom: 10,
         height: 120,
     },
     cardTitle: {
         fontSize: 16,
-        color: '#333333', // Dark text color for card titles
+        color: '#333333', 
     },
     cardValue: {
         fontSize: 24,
         fontWeight: 'bold',
-        color: '#3a477a', // Main color for card values
+        color: '#3a477a', 
     },
     resourceRow: {
         flexDirection: 'row',
@@ -154,14 +149,14 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         marginBottom: 15,
         marginRight: 10,
-        flexBasis: '30%', // Make resource cards take up 30% of the container width
+        flexBasis: '30%', 
         alignItems: 'center',
         justifyContent: 'center',
     },
     resourceCardTitle: {
         fontSize: 14,
         fontWeight: 'bold',
-        color: '#3a477a', // Main color for resource card text
+        color: '#3a477a', 
         marginTop: 10,
         textAlign: 'center',
     },
@@ -171,7 +166,7 @@ const styles = StyleSheet.create({
     departmentsTitle: {
         fontSize: 20,
         fontWeight: 'bold',
-        color: '#3a477a', // Main color for section heading
+        color: '#3a477a', 
     },
     departmentContainer: {
         flexDirection: 'row',
@@ -197,7 +192,7 @@ const styles = StyleSheet.create({
     departmentText: {
         fontSize: 18,
         fontWeight: 'bold',
-        color: '#3a477a', // Main color for department text
+        color: '#3a477a', 
     },
 });
 
