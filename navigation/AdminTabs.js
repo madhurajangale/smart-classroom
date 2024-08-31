@@ -25,7 +25,7 @@ const TabNavigator = () => (
       },
       tabBarActiveTintColor: '#fff',
       tabBarInactiveTintColor: 'gray',
-      tabBarStyle: { backgroundColor: '#3a477a' },
+      tabBarStyle: { backgroundColor: '#3a477a'},
     })}
   >
     <Tab.Screen name="AdminHome" component={AdminHome} />

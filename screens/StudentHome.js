@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons'; 
-import moment from 'moment'; // For date manipulation
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Image } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+import moment from 'moment';
 import { useNavigation } from '@react-navigation/native';
 
 const HomeScreen = () => {
@@ -15,8 +15,8 @@ const HomeScreen = () => {
     }, []);
 
     const generateDates = () => {
-        const startDate = moment().subtract(2, 'days'); // Start 3 days ago for demonstration
-        const endDate = moment().add(2, 'days'); // End 3 days into the future
+        const startDate = moment().subtract(2, 'days');
+        const endDate = moment().add(3, 'days');
         const dateArray = [];
 
         let date = startDate;
@@ -33,19 +33,26 @@ const HomeScreen = () => {
     };
 
     const handleViewAllSubjects = () => {
-        navigation.navigate('AllSubjects'); // Navigate to AllSubjects screen
+        navigation.navigate('AllSubjects');
     };
 
     return (
         <View style={styles.container}>
             {/* Top Bar */}
             <View style={styles.topBar}>
-                <Text style={styles.logo}>E</Text>
+                <Image
+                    source={require('../assets/LOGO.png')}
+                    style={styles.logoImg}
+                />
                 <View style={styles.profileContainer}>
-                <TouchableOpacity style={styles.verify} >
-                    <Text style={styles.viewAllText}>Verify face</Text>
-                </TouchableOpacity>
-            
+                    <TouchableOpacity style={styles.verify} >
+                        <Text style={styles.viewAllText}>Verify face</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
+                        <Icon name="notifications" size={30} color="#3a477a" style={styles.bell}/>
+                    </TouchableOpacity>
+
                     <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
                         <Icon name="person" size={30} color="#3a477a" />
                     </TouchableOpacity>
@@ -86,7 +93,7 @@ const HomeScreen = () => {
                 <View style={styles.classesContainer}>
                     <TouchableOpacity
                         style={styles.classCard}
-                        onPress={() => handleCardClick('Math')} 
+                        onPress={() => handleCardClick('Math')}
                     >
                         <View style={styles.classInfo}>
                             <Text style={styles.subjectName}>Math </Text>
@@ -132,6 +139,10 @@ const HomeScreen = () => {
 };
 
 const styles = StyleSheet.create({
+    logoImg:{
+        height: 35,
+        width: 60,
+    },
     container: {
         backgroundColor: 'white',
     },
@@ -144,11 +155,7 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
         borderBottomColor: '#e0e0e0',
     },
-    logo: {
-        fontSize: 24,
-        fontWeight: 'bold',
-        color: '#3a477a',
-    },
+    
     profileContainer: {
         flexDirection: 'row',
         alignItems: 'center',
@@ -156,6 +163,9 @@ const styles = StyleSheet.create({
     username: {
         marginRight: 8,
         color: '#3a477a',
+    },
+    bell: {
+        marginRight: 8,
     },
     dateScroll: {
         paddingVertical: 8,
